@@ -22,6 +22,23 @@ java -jar <filename>
 kotlinc -script <filename>.kts -- <argumentOption> <argumentValue>
 ```
 
+### Compile Kotlin/Java Project using Gradle:
+The folder gradelKotlinCMD was initialised using the following gradle command:
+```
+gradle init --type java-application  --dsl kotlin
+```
+View available gradle tasks:
+```
+gradle tasks
+
+# or if your gradle build uses gradle wrapper:
+./gradlew tasks
+
+```
+Common commards are:
+run - Runs this project as a JVM application
+build - Assembles and tests this project.
+
 ## How to use this project
 
 All Files are self contained and folders organise related files.
