@@ -28,6 +28,5 @@ public class App {
         String result = join(tokens);
 
         logger.info(WordUtils.capitalize(result));
-
     }
 }
