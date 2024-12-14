@@ -2,7 +2,12 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/gradleKotlinNative/.gradle/8.11.1/vcsMetadata" />
+      <excludeFolder url="file://$MODULE_DIR$/gradleKotlinNative/build/classes/kotlin/native/main/klib/gradleKotlinNative/default/resources" />
+      <excludeFolder url="file://$MODULE_DIR$/gradleKotlinNative/build/classes/kotlin/native/main/klib/gradleKotlinNative/default/targets" />
+      <excludeFolder url="file://$MODULE_DIR$/gradleKotlinNative/build/tmp" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
