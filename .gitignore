@@ -1,1 +1,5 @@
 *.jar
+*.gradle
+.gradle/
+build
+*/build/
