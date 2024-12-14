@@ -1,4 +1,4 @@
-package org.example.app;
+package org.example.app
 fun KotlinEntryFunction() : String{
     return "Hello"
 }
