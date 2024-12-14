@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gradleKotlinCMD.iml" filepath="$PROJECT_DIR$/.idea/modules/gradleKotlinCMD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/gradleKotlinCMD.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/gradleKotlinCMD.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/gradleKotlinCMD.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/gradleKotlinCMD.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/gradleKotlinCMD.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/gradleKotlinCMD.app.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/gradleKotlinCMD.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/gradleKotlinCMD.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/gradleKotlinCMD.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/gradleKotlinCMD.buildSrc.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc/gradleKotlinCMD.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc/gradleKotlinCMD.buildSrc.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/list/gradleKotlinCMD.list.iml" filepath="$PROJECT_DIR$/.idea/modules/list/gradleKotlinCMD.list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/list/gradleKotlinCMD.list.main.iml" filepath="$PROJECT_DIR$/.idea/modules/list/gradleKotlinCMD.list.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/list/gradleKotlinCMD.list.test.iml" filepath="$PROJECT_DIR$/.idea/modules/list/gradleKotlinCMD.list.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utilities/gradleKotlinCMD.utilities.iml" filepath="$PROJECT_DIR$/.idea/modules/utilities/gradleKotlinCMD.utilities.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utilities/gradleKotlinCMD.utilities.main.iml" filepath="$PROJECT_DIR$/.idea/modules/utilities/gradleKotlinCMD.utilities.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/utilities/gradleKotlinCMD.utilities.test.iml" filepath="$PROJECT_DIR$/.idea/modules/utilities/gradleKotlinCMD.utilities.test.iml" />
+    </modules>
+  </component>
+</project>
