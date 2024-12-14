@@ -1,4 +1,5 @@
 package org.example.app;
-fun banter() : String{
+fun KotlinEntryFunction() : String{
     return "Hello"
 }
+

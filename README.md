@@ -31,11 +31,14 @@ View available gradle tasks:
 ```
 gradle tasks
 
-# or if your gradle build uses gradle wrapper:
+# or if your gradle build uses gradle wrapper (this is recommended for reliable standardised execution )
+#For Linux and MAC OS:
 ./gradlew tasks
 
+#For Windows Powershell:
+.\gradlew.bat build
 ```
-Common commards are:
+Common commands are:
 run - Runs this project as a JVM application
 build - Assembles and tests this project.
 
@@ -47,4 +50,6 @@ All Files are self contained and folders organise related files.
 
 https://kotlinlang.org/docs/command-line.html
 
-https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax 
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
+https://docs.gradle.org/current/userguide/gradle_wrapper_basics.html#gradle_wrapper_basics
