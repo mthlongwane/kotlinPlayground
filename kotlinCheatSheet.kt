@@ -1,4 +1,6 @@
 import Color.*
+import java.lang.IllegalArgumentException
+
 /**
  * reference: Kotlin in Action - Dmitry Jemerov and Svetlana Isakova
  * Example code: 
@@ -9,7 +11,8 @@ import Color.*
 
 fun main(){
 //    namedGreeting()
-    playWithEnums()
+//    playWithEnums()
+    playingWithInterfaces()
 }
 
 fun namedGreeting(){
@@ -23,6 +26,9 @@ fun namedGreeting(){
     val person1 =  Person(name,age)
     println("Adult status ?: ${person1.isAdult}")
 }
+
+// Playing with classes
+
 /**
  * Concise Kotlin Class
  * Note: Properties are a combination of class fields and their accessors(getters and setters)
@@ -39,6 +45,8 @@ class Person( //Public class by Default
             return age>18 //computed
         }
 }
+
+// Playing with Enums
 
 //enum class Color{ // Standard Enum class with no constructor
 //    RED, GREEN, BlUE,YELLOW, INDIGO, VIOLET
@@ -79,12 +87,64 @@ enum class Color(
  *
  * @param color1
  * @param color2
+ * @return Colour -  Mix of the two colours
+ * @throws Exception("Unknown colour mix")
  */
 fun mixColours(color1:Color, color2:Color): Color{
-    return when (setOf(color1,color2)){
-        setOf(Color.RED, Color.YELLOW) -> Color.ORANGE //If the Enum is imported you dont need to use the Enum Name.
-        setOf(BLUE, YELLOW) -> GREEN
-        setOf(BLUE, VIOLET) -> INDIGO
-        else -> throw Exception("Unkown colour mix")
+    return when (setOf(color1,color2)) { // Using when statement with Objects.
+        setOf(Color.RED, Color.YELLOW)  -> Color.ORANGE //If the Enum is imported you dont need to use the Enum Name.
+        setOf(BLUE, YELLOW)             -> GREEN
+        setOf(BLUE, VIOLET)             -> INDIGO
+        else                            -> throw Exception("Unkown colour mix")
+    } //Note - This function is somewhat inefficient - Everytime it is called, several shortlived objects are created.
+}
+/**
+ * Optimised Function for mixing two colours and returning a colour using a when statement
+ *
+ * @param color1
+ * @param color2
+ * @return Colour -  Mix of the two colours
+ * @throws Exception("Unknown colour mix")
+ */
+fun mixColoursOptimised(color1:Color, color2:Color): Color{
+    return when { // Using when statement with Objects.
+        (color1==Color.RED && color2==Color.YELLOW) || (color1==Color.YELLOW && color2==Color.RED)  -> Color.ORANGE
+        (color1==BLUE && color2==YELLOW) || (color1==YELLOW && color2==BLUE)                        -> GREEN
+        (color1==BLUE && color2==VIOLET) || (color1==VIOLET && color2==BLUE)                        -> INDIGO
+        else                                                                                        -> throw Exception("Unkown colour mix")
+    }
+}
+
+// Playing with Interfaces and when statements
+
+interface Expr
+class Num(val value: Int) : Expr // Class Num implements the Expression Interface
+class Sum(val left: Expr, val right: Expr) : Expr
+class Subtract(val left: Expr, val right: Expr) : Expr
+class Multuply(val left: Expr, val right: Expr) : Expr
+class Divide(val left: Expr, val right: Expr) : Expr
+
+fun playingWithInterfaces(){
+    println(
+        eval( Sum( Sum(Num(1),Num(2)), Num(4)) )
+    )
+}
+/**
+ * Function for evaluating mathematical expressions
+ *
+ * @param   e -  Mathematical Expression
+ * @return  Int -  Evaluated Expression Integer Result
+ * @throws  IllegalArgumentException - ("Unknown Expression")
+ */
+fun eval(e: Expr): Int {
+    return when {
+        (e is Num)       -> {  val n = e as Num
+                                n.value
+                            }
+        (e is Sum)       -> eval(e.left) + eval(e.right)
+        (e is Subtract)  -> eval(e.left) - eval(e.right)
+        (e is Multuply)  -> eval(e.left) * eval(e.right)
+        (e is Divide)    -> eval(e.left) / eval(e.right)
+        else             -> throw IllegalArgumentException("Unknown Expression")
     }
 }
