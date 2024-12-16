@@ -196,5 +196,6 @@ fun playingwithRanges(){
     println("Is \'2\' a letter?  ${isLetter('2')} ")
 }
 
+// Using the "in" keyword to check range membership
 fun isLetter(character: Char) = character in 'A'..'Z' || character in 'a'..'z'
 fun isDigit(character: Char) = character in '0'..'9'
