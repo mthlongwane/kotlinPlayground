@@ -9,6 +9,12 @@ import java.lang.IllegalArgumentException
  *
  */
 
+//Since all of these methods are outside of a class, they will be compiled to Java as static methods of a class named using the filename
+// See: Kotlin in Action pg:95
+
+val staticVariable: String = "This is a static variable"
+
+
 fun main(){
 //    namedGreeting()
 //    playWithEnums()
