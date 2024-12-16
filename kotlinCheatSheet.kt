@@ -13,7 +13,8 @@ fun main(){
 //    namedGreeting()
 //    playWithEnums()
 //    playingWithInterfaces()
-    playingWithIteration()
+//    playingWithIteration()
+    playingwithRanges()
 
 }
 
@@ -162,19 +163,38 @@ fun eval(e: Expr): Int {
 }
 
 //  ---------------------
-//  Iteration
+//  Iteration and Maps
 //  ---------------------
 
 fun playingWithIteration(){
     val binaryReps = mutableMapOf<Char, String>()
-    for (char in 'A'..'F'){
+    for (char in 'A'..'F'){ // Ranges
         val binaryValue = char.code.toString(radix=2)
-        binaryReps[char] = binaryValue
+        binaryReps[char] = binaryValue // store value in map by [key]
     }
-
+    /** Iteration over a map with key and value pairs destructured */
     for ((character,binaryRep) in binaryReps){
         println("$character = $binaryRep")
     }
+
     println("Map value by key ['A']: ${binaryReps['A']}")
 }
 
+//  ---------------------
+//  Iteration and Ranges
+//  ---------------------
+
+fun playingwithRanges(){
+    /** Iteration over a list with an index as well as its element  */
+    val listOfLetters: List<String> = ('A'..'F').map{ item: Char -> "$item$item" }
+    for ((index, element) in listOfLetters.withIndex() ){
+        println("${index}: ${element}")
+    }
+    println("Is \'q\' a letter?  ${isLetter('q')} ")
+    println("Is \'q\' a digit?  ${isDigit('q')} ")
+    println("Is \'2\' a digit?  ${isDigit('2')} ")
+    println("Is \'2\' a letter?  ${isLetter('2')} ")
+}
+
+fun isLetter(character: Char) = character in 'A'..'Z' || character in 'a'..'z'
+fun isDigit(character: Char) = character in '0'..'9'
