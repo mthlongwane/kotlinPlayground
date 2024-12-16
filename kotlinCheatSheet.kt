@@ -12,7 +12,9 @@ import java.lang.IllegalArgumentException
 fun main(){
 //    namedGreeting()
 //    playWithEnums()
-    playingWithInterfaces()
+//    playingWithInterfaces()
+
+
 }
 
 fun namedGreeting(){
@@ -21,13 +23,16 @@ fun namedGreeting(){
     println("Hello $name!")
 
     println("How old are you ? ")
-    val age: Int = readln().toInt()
+    val age: Int = readln().toInt() // casting string to Int via String extension function
+//    val age: Int = readln() as Int // Kotlin explicit type cast using as keyword - not working
 
     val person1 =  Person(name,age)
     println("Adult status ?: ${person1.isAdult}")
 }
 
-// Playing with classes
+//  ---------------------
+//  Classes
+//  ---------------------
 
 /**
  * Concise Kotlin Class
@@ -40,13 +45,15 @@ class Person( //Public class by Default
     val name: String, //val property is read only therefore it only gets the getter accessor
     val age: Int,
 ){
-    val isAdult: Boolean
-        get(){ // custom accessors allow you to override the default accessor logic.
+    val isAdult: Boolean get(){ // custom accessors allow you to override the default accessor logic.
             return age>18 //computed
         }
 }
 
-// Playing with Enums
+//  ---------------------
+//  Enums
+//  ---------------------
+
 
 //enum class Color{ // Standard Enum class with no constructor
 //    RED, GREEN, BlUE,YELLOW, INDIGO, VIOLET
@@ -115,7 +122,9 @@ fun mixColoursOptimised(color1:Color, color2:Color): Color{
     }
 }
 
-// Playing with Interfaces and when statements
+//  ---------------------
+//  Interfaces and When statements
+//  ---------------------
 
 interface Expr
 class Num(val value: Int) : Expr // Class Num implements the Expression Interface
@@ -137,14 +146,27 @@ fun playingWithInterfaces(){
  * @throws  IllegalArgumentException - ("Unknown Expression")
  */
 fun eval(e: Expr): Int {
-    return when {
-        (e is Num)       -> {  val n = e as Num
-                                n.value
-                            }
-        (e is Sum)       -> eval(e.left) + eval(e.right)
-        (e is Subtract)  -> eval(e.left) - eval(e.right)
-        (e is Multuply)  -> eval(e.left) * eval(e.right)
-        (e is Divide)    -> eval(e.left) / eval(e.right)
-        else             -> throw IllegalArgumentException("Unknown Expression")
+    return when(e) {
+        // is  keyword is equivalent to instanceof
+
+        is Num       -> { e.value          // Smart cast - if you check the value you dont need to cast it afterward.
+//                        val n = e as Num  // Normal type casting
+//                        n.value
+                        }
+        is Sum      -> eval(e.left) + eval(e.right)
+        is Subtract -> eval(e.left) - eval(e.right)
+        is Multuply -> eval(e.left) * eval(e.right)
+        is Divide   -> eval(e.left) / eval(e.right)
+        else        -> throw IllegalArgumentException("Unknown Expression")
     }
 }
+
+//  ---------------------
+//  Iteration
+//  ---------------------
+
+fun playingWithIteration(){
+    val binaryReps = mutableMapOf<Char, String>()
+
+}
+
