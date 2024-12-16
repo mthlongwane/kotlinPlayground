@@ -13,7 +13,7 @@ fun main(){
 //    namedGreeting()
 //    playWithEnums()
 //    playingWithInterfaces()
-
+    playingWithIteration()
 
 }
 
@@ -167,6 +167,14 @@ fun eval(e: Expr): Int {
 
 fun playingWithIteration(){
     val binaryReps = mutableMapOf<Char, String>()
+    for (char in 'A'..'F'){
+        val binaryValue = char.code.toString(radix=2)
+        binaryReps[char] = binaryValue
+    }
 
+    for ((character,binaryRep) in binaryReps){
+        println("$character = $binaryRep")
+    }
+    println("Map value by key ['A']: ${binaryReps['A']}")
 }
 
