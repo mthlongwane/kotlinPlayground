@@ -14,8 +14,8 @@ fun main(){
 //    playWithEnums()
 //    playingWithInterfaces()
 //    playingWithIteration()
-    playingwithRanges()
-
+//    playingwithRanges()
+    playingwithCollections()
 }
 
 fun namedGreeting(){
@@ -183,9 +183,8 @@ fun playingWithIteration(){
 //  ---------------------
 //  Iteration and Ranges
 //  ---------------------
-
+/** Iteration over a list with an index as well as its element  */
 fun playingwithRanges(){
-    /** Iteration over a list with an index as well as its element  */
     val listOfLetters: List<String> = ('A'..'F').map{ item: Char -> "$item$item" }
     for ((index, element) in listOfLetters.withIndex() ){
         println("${index}: ${element}")
@@ -199,3 +198,19 @@ fun playingwithRanges(){
 // Using the "in" keyword to check range membership
 fun isLetter(character: Char) = character in 'A'..'Z' || character in 'a'..'z'
 fun isDigit(character: Char) = character in '0'..'9'
+
+//  ---------------------
+//  Collections & Functions
+//  ---------------------
+
+fun playingwithCollections(){
+    val newMap  = mapOf(1 to "One", 2 to "Two", 3 to "Three")
+    for ((key, value) in newMap ){
+        println("Key: $key - Value: $value ")
+    }
+
+}
+
+//Note: [pg: 93] @JvmOverloads annotation to account for Java not having default parameter values
+
+
